@@ -1,4 +1,5 @@
 import { profile } from "../data/portfolioData";
+import profileImg from "../../assets/Fernando profile picture.jpeg";
 
 export function MobileHero() {
   return (
@@ -6,8 +7,8 @@ export function MobileHero() {
       <div className="container mobile-hero-inner">
         <div className="mobile-hero-photo">
           <img
-            src="https://randomuser.me/api/portraits/men/32.jpg"
-            alt="Profile photo – Fernando Arias"
+            src={profileImg}
+            alt="Fernando Arias – profile photo"
           />
         </div>
         <div className="mobile-hero-content">

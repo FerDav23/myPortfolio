@@ -1,4 +1,5 @@
 import { profile } from "../data/portfolioData";
+import profileImg from "../../assets/Fernando profile picture.jpeg";
 
 export function Hero() {
   return (
@@ -29,8 +30,8 @@ export function Hero() {
         </div>
         <div className="hero-photo fade-in-up delay-1">
           <img
-            src="https://randomuser.me/api/portraits/men/32.jpg"
-            alt="Profile photo placeholder – replace with your picture"
+            src={profileImg}
+            alt="Fernando Arias – profile photo"
           />
         </div>
       </div>
