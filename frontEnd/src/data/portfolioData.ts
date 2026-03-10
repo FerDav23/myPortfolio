@@ -10,14 +10,13 @@ export const profile = {
   email: "ariasfernando11@gmail.com",
   resumeUrl:
     "file:///C:/Users/Fernando/AppData/Roaming/Cursor/User/workspaceStorage/027142b956c465b8505dcf14da7d7be1/pdfs/ec1703b3-9b1e-48ed-ad33-94269b65b07a/Fernando%27s%20Resume%20(6).pdf",
-  github: "https://github.com/",
-  linkedIn: "https://www.linkedin.com/",
+  github: "https://github.com/FerDav23",
+  linkedIn: "www.linkedin.com/in/fernando-arias-navia",
 };
 
 export const aboutNarrative = [
   "I combine systems engineering foundations with hands-on software delivery to build products that connect devices, users, and data.",
-  "My work spans embedded firmware and hardware integration all the way to cloud infrastructure, REST APIs, mobile applications, and full-stack dashboards.",
-  "I enjoy building practical engineering solutions in IoT, automation, and full-stack platforms where reliability, usability, and measurable business impact matter.",
+  "My work spans embedded firmware and hardware integration all the way to cloud infrastructure, REST APIs, mobile applications, and full-stack dashboards. I enjoy building practical engineering solutions in IoT, automation, and full-stack platforms where reliability, usability, and measurable business impact matter.",
 ];
 
 export const skills: SkillCategory[] = [
@@ -108,6 +107,55 @@ export const experience: ExperienceItem[] = [
 ];
 
 export const projects: ProjectItem[] = [
+  
+    {
+    id: "shrimp-platform",
+    title: "Shrimp Trading Platform",
+    shortDescription:
+      "Role-based platform connecting producers and packers with centralized price comparison and logistics workflows. Utilizes AWS services for scalable, secure, and highly available infrastructure.",
+    fullDescription:
+      "Architected a multi-stakeholder full-stack platform for shrimp trading operations in Ecuador, leveraging AWS Cloud services (including EC2, S3, CloudFront, IAM, RDS, and Aurora) for robust cloud infrastructure. The product improves coordination, decision speed, and transparency through role-aware dashboards and transaction workflows, backed by secure, scalable, and resilient AWS architecture.",
+    techStack: [
+      "React",
+      "Node.js",
+      "Express",
+      "MySQL",
+      "AWS (EC2, S3, CloudFront, RDS, Aurora)"
+    ],
+    category: "Full Stack Web Application",
+    architecture: [
+      "React dashboards provide role-specific views for producers, packers, and operators.",
+      "Node.js/Express APIs enforce workflow rules and transaction consistency.",
+      "AWS EC2 hosts backend services, while S3 stores static assets and user uploads.",
+      "Data persistence is managed by AWS RDS and Aurora, ensuring high performance and reliability for pricing, logistics, and account-level operations.",
+    ],
+    highlights: [
+      "Role-based dashboards",
+      "Centralized price comparison",
+      "Logistics workflow orchestration",
+      "Cloud infrastructure with AWS EC2, S3, CloudFront, IAM, RDS, and Aurora",
+      "Scalable and secure architecture"
+    ],
+    demoUrl: "https://shrimp-platform.fernando-arias-navia.cv/login",
+    githubUrl: "https://github.com/FerDav23/Shrimp-Trading-Platform-Demo",
+    images: [
+      {
+        src: "/projects-images/Shrimp-project/producer-offer-preview.PNG",
+        alt: "Producer offer preview screen",
+        caption: "Producer dashboard — view and accept offers from packers.",
+      },
+      {
+        src: "/projects-images/Shrimp-project/packers-offers.PNG",
+        alt: "Packers offers view",
+        caption: "Packers console — create and manage offers to producers.",
+      },
+      {
+        src: "/projects-images/Shrimp-project/packers-purchases-console.PNG",
+        alt: "Packers purchases console",
+        caption: "Purchases workflow — track and manage purchases from producers.",
+      },
+    ],
+  },
   {
     id: "iot-smart-plug",
     title: "IoT Smart Plug Energy Monitoring System",
@@ -158,28 +206,7 @@ export const projects: ProjectItem[] = [
       "Custom SolidWorks enclosure integration",
     ],
   },
-  {
-    id: "shrimp-platform",
-    title: "Shrimp Trading Platform",
-    shortDescription:
-      "Role-based platform connecting producers and packers with centralized price comparison and logistics workflows.",
-    fullDescription:
-      "Architected a multi-stakeholder full-stack platform for shrimp trading operations in Ecuador. The product improves coordination, decision speed, and transparency through role-aware dashboards and transaction workflows.",
-    techStack: ["React", "Node.js", "Express", "MySQL", "AWS"],
-    category: "Full Stack",
-    architecture: [
-      "React dashboards provide role-specific views for producers, packers, and operators.",
-      "Node.js/Express APIs enforce workflow rules and transaction consistency.",
-      "MySQL persistence layer supports pricing, logistics, and account-level operations.",
-    ],
-    highlights: [
-      "Role-based dashboards",
-      "Centralized price comparison",
-      "Logistics workflow orchestration",
-    ],
-    demoUrl: "https://example.com",
-    githubUrl: "https://github.com/",
-  },
+
   {
     id: "loyalty-platform",
     title: "Customer Loyalty & Rewards Platform",
@@ -188,7 +215,7 @@ export const projects: ProjectItem[] = [
     fullDescription:
       "Built a full-stack loyalty and rewards platform for vehicle service operations with 100+ registered users. The platform centralizes account data, reward balance management, and service history while improving access speed through QR card authentication.",
     techStack: ["React", "Node.js", "MySQL", "AWS", "REST APIs", "QR authentication"],
-    category: "Full Stack",
+    category: "Full Stack Web Application",
     architecture: [
       "Frontend UI handles customer account and rewards operations.",
       "REST API services manage authentication, points, and service history records.",
@@ -226,5 +253,5 @@ export const projectCategories: Array<ProjectCategory | "All"> = [
   "All",
   "Software",
   "Embedded",
-  "Full Stack",
+  "Full Stack Web Application",
 ];

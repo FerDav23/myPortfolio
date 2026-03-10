@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import type { ProjectItem } from "../types";
 
 type ProjectModalProps = {
@@ -6,14 +7,87 @@ type ProjectModalProps = {
 };
 
 export function ProjectModal({ project, onClose }: ProjectModalProps) {
+  const [expandedImageIndex, setExpandedImageIndex] = useState<number | null>(null);
+  const hasImages = project.images && project.images.length > 0;
+  const expandedImage = expandedImageIndex !== null && project.images ? project.images[expandedImageIndex] : null;
+
+  useEffect(() => {
+    if (expandedImageIndex === null) return;
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setExpandedImageIndex(null);
+    };
+    window.addEventListener("keydown", handleEscape);
+    return () => window.removeEventListener("keydown", handleEscape);
+  }, [expandedImageIndex]);
+
   return (
-    <div className="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="project-title">
-      <div className="modal-card">
+    <div
+      className="modal-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="project-title"
+      onClick={onClose}
+    >
+      <div className="modal-card" onClick={(e) => e.stopPropagation()}>
         <button className="modal-close" onClick={onClose} aria-label="Close project details">
           ×
         </button>
         <h3 id="project-title">{project.title}</h3>
         <p className="muted">{project.fullDescription}</p>
+
+        {hasImages && (
+          <div className="modal-gallery">
+            <h4>Example Pages</h4>
+            <div className="modal-gallery-list">
+              {project.images!.map((img, index) => (
+                <figure key={index} className="modal-gallery-item">
+                  <button
+                    type="button"
+                    className="modal-gallery-img-wrap"
+                    onClick={() => setExpandedImageIndex(index)}
+                    aria-label={`Expand: ${img.alt}`}
+                  >
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      loading="lazy"
+                      className="modal-gallery-img"
+                    />
+                  </button>
+                  {img.caption && (
+                    <figcaption className="modal-gallery-caption">{img.caption}</figcaption>
+                  )}
+                </figure>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {expandedImage && (
+          <div
+            className="modal-lightbox"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Expanded image"
+            onClick={() => setExpandedImageIndex(null)}
+          >
+            <button
+              type="button"
+              className="modal-lightbox-close"
+              onClick={() => setExpandedImageIndex(null)}
+              aria-label="Close expanded image"
+            >
+              ×
+            </button>
+            <div className="modal-lightbox-content" onClick={(e) => e.stopPropagation()}>
+              <img src={expandedImage.src} alt={expandedImage.alt} className="modal-lightbox-img" />
+              {expandedImage.caption && (
+                <p className="modal-lightbox-caption">{expandedImage.caption}</p>
+              )}
+            </div>
+          </div>
+        )}
+
         <h4>Technologies Used</h4>
         <div className="badge-wrap">
           {project.techStack.map((tech) => (

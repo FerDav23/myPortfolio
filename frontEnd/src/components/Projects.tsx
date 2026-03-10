@@ -42,7 +42,7 @@ export function Projects() {
                 <h3>{project.title}</h3>
                 <p className="muted">{project.shortDescription}</p>
                 <div className="badge-wrap">
-                  {project.techStack.slice(0, 4).map((tech) => (
+                  {project.techStack.map((tech) => (
                     <span className="badge" key={tech}>
                       {tech}
                     </span>
