@@ -11,6 +11,10 @@ const hardwareTracks = [
     title: "System Architecture",
     points: ["Device-to-cloud data flow", "Time-series telemetry pipelines", "Mobile interfaces for real-time monitoring"],
   },
+  {
+    title: "Networking & Simulation",
+    points: ["ns-3 network simulation", "Distributed and P2P systems", "TCP/IP, MQTT, REST"],
+  },
 ];
 
 export function Hardware() {

@@ -5,7 +5,7 @@ type HeroProps = {
   onOpenResumeModal?: () => void;
 };
 
-export function Hero({ onOpenResumeModal }: HeroProps) {
+export function Hero({ onOpenResumeModal: _onOpenResumeModal }: HeroProps) {
   return (
     <section id="home" className="hero section" style={{paddingTop: "3rem"}}>
       <div className="container hero-grid">
@@ -24,6 +24,7 @@ export function Hero({ onOpenResumeModal }: HeroProps) {
             <a className="btn btn-primary" href="#projects">
               View Projects
             </a>
+            {/* 
             <button
               type="button"
               className="btn btn-secondary"
@@ -31,6 +32,10 @@ export function Hero({ onOpenResumeModal }: HeroProps) {
             >
               Download Resume
             </button>
+            */}
+            <a className="btn btn-secondary" href="#experience">
+              View Experience
+            </a>
             <a className="btn btn-secondary" href="#contact">
               Contact Me
             </a>

@@ -1,10 +1,10 @@
-import type { ExperienceItem, ProjectCategory, ProjectItem, SkillCategory } from "../types";
+import type { EducationItem, ExperienceItem, ProjectCategory, ProjectItem, SkillCategory } from "../types";
 
 export const profile = {
   name: "Fernando David Arias Navia",
-  title: "Systems Engineering Graduate | Embedded Systems & Full-Stack Developer",
+  title: "Systems Engineering Graduate (May 2026) | Embedded, Signal & Network Systems | Full-Stack Developer",
   summary:
-    "Systems engineering graduate with experience building embedded IoT devices, automation systems, and full-stack software platforms. Skilled in integrating hardware, firmware, cloud infrastructure, and mobile applications to develop complete cyber-physical systems.",
+    "Systems engineering graduate with experience developing embedded and distributed systems integrating sensors, actuators, communication networks, and cloud infrastructure. Skilled in embedded firmware development, signal analysis, networked system design, and full-stack software development for connected systems. Experienced building IoT devices, real-time monitoring systems, and cyber-physical platforms using C/C++, Python, JavaScript, MATLAB, Git, and Linux.",
   location: "Vancouver, BC",
   phone: "+1 (236) 865-3397",
   email: "ariasfernando11@gmail.com",
@@ -30,8 +30,19 @@ export const profile = {
 };
 
 export const aboutNarrative = [
-  "I combine systems engineering foundations with hands-on software delivery to build products that connect devices, users, and data.",
-  "My work spans embedded firmware and hardware integration all the way to cloud infrastructure, REST APIs, mobile applications, and full-stack dashboards. I enjoy building practical engineering solutions in IoT, automation, and full-stack platforms where reliability, usability, and measurable business impact matter.",
+  "I combine systems engineering foundations with hands-on software delivery to build products that connect devices, users, and data. My work spans embedded firmware and hardware integration all the way to cloud infrastructure, REST APIs, mobile applications, and full-stack dashboards. I enjoy building practical engineering solutions in IoT, automation, and full-stack platforms where reliability, usability, and measurable business impact matter.",
+  "I use signal processing and data analysis (e.g. Fourier and frequency-domain analysis, time-series, MATLAB/Simulink) to model and evaluate system behavior. I also work with networking and distributed systems (TCP/IP, MQTT, peer-to-peer, ns-3 simulation) to design and test connected and cyber-physical systems.",
+];
+
+export const aboutPillars = [
+  { title: "Hardware", detail: "Sensors, relays, power systems, instrumentation" },
+  { title: "Firmware", detail: "ESP32 control logic, MQTT communication, edge behavior" },
+  { title: "Networks", detail: "TCP/IP, MQTT, peer-to-peer, ns-3 simulation, distributed systems" },
+  { title: "Cloud", detail: "AWS infrastructure, APIs, and data pipelines" },
+  { title: "Software Development", detail: "React, React Native, Node.js, Express, REST APIs, MySQL, PostgreSQL, TimescaleDB" },
+  { title: "Signal & Control", detail: "Signals and systems, frequency-domain analysis, MATLAB/Simulink, control systems" },
+   
+  
 ];
 
 export const skills: SkillCategory[] = [
@@ -45,15 +56,43 @@ export const skills: SkillCategory[] = [
       "ESP32",
       "MQTT",
       "Sensor integration",
+      "Actuator control",
+      "Relay systems",
       "Circuit design",
       "Battery management systems",
-      "Oscilloscope & instrumentation",
+      "Embedded power systems",
+      "Oscilloscopes",
+      "Signal generators",
+      "SolidWorks",
+      "Embedded debugging",
+    ],
+  },
+  {
+    title: "Signal Processing & Data Analysis",
+    items: [
+      "Signals and systems",
+      "Fourier and frequency-domain analysis",
+      "Time-series analysis",
+      "MATLAB / Simulink",
     ],
   },
   {
     title: "Software Development",
     items: ["React", "React Native", "Node.js", "Express", "REST APIs"],
   },
+  {
+    title: "Networking & Distributed Systems",
+    items: [
+      "TCP/IP",
+      "UDP",
+      "MQTT",
+      "Peer-to-peer systems",
+      "REST APIs",
+      "ns-3 network simulation",
+      "Linux",
+    ],
+  },
+ 
   {
     title: "Databases",
     items: ["MySQL", "PostgreSQL", "TimescaleDB"],
@@ -70,11 +109,11 @@ export const experience: ExperienceItem[] = [
     company: "FJ Centro Integral de Mantenimiento",
     dates: "Jan 2026 - Current",
     achievements: [
-      "Developed a full-stack customer loyalty and rewards platform using React, Node.js, MySQL, and AWS, supporting 100+ registered users.",
-      "Designed REST APIs and relational schemas for customer accounts, reward points, and vehicle service history.",
-      "Implemented QR-code authentication with physical membership cards for fast login.",
-      "Architected a multi-user shrimp trading platform in Ecuador with centralized price comparison and logistics workflows.",
-      "Built role-based dashboards and workflows supporting producers, packers, and operations users.",
+      "Developed a full-stack customer loyalty and rewards platform using React, Node.js, MySQL, and AWS, supporting 100+ users and enabling digital tracking of vehicle service history.",
+      "Designed REST APIs and relational database schemas to manage customer accounts, reward points, and service transactions.",
+      "Implemented QR-code authentication using physical membership cards, enabling fast user identification and reducing manual login processes.",
+      "Architected a multi-user supply-chain platform connecting shrimp producers and packers in Ecuador, supporting price comparison, transaction management, and logistics workflows.",
+      "Built role-based dashboards and workflow systems enabling multiple stakeholders to manage transactions, logistics, and operational data across the platform.",
     ],
   },
   {
@@ -82,9 +121,9 @@ export const experience: ExperienceItem[] = [
     company: "ElContadorEC",
     dates: "Apr 2025 - Oct 2025",
     achievements: [
-      "Designed and deployed a full-stack e-commerce platform using React, Node.js, and MySQL.",
-      "Implemented secure authentication, encrypted password storage, and Nuvei payment integration.",
-      "Provisioned and deployed cloud infrastructure with AWS EC2, S3, and Route53.",
+      "Designed and deployed a full-stack e-commerce platform using React, Node.js, and MySQL to support online accounting services and customer account management.",
+      "Implemented secure authentication and encrypted password storage, and integrated the Nuvei payment gateway to support secure online transactions.",
+      "Deployed and maintained cloud infrastructure on AWS (EC2, S3, Route53) to support application hosting, storage, and domain management.",
     ],
   },
   {
@@ -92,20 +131,20 @@ export const experience: ExperienceItem[] = [
     company: "FJ CIM",
     dates: "April 2025 - Oct 2025",
     achievements: [
-      "Developed a web interface integrating the company's vehicle maintenance database using React and Node.js.",
-      "Implemented filtering and data access features, allowing customers to view their service history online.",
-      "Provided technical consulting to company management on software systems and technology infrastructure.",
+      "Developed a web interface using React and Node.js to integrate with the company's vehicle maintenance database, enabling customers to access their service records online.",
+      "Implemented data filtering and API-based data retrieval features, allowing users to query and view vehicle service history efficiently.",
+      "Provided technical consulting to management on software systems, database architecture, and technology infrastructure to support the company's digital platform.",
     ],
   },
   {
-    role: "Mobile App Developer (Co-op Work)",
+    role: "Mobile Application Developer (Co-op Work)",
     company: "FJ Star Aqua",
     dates: "Sept 2024 - Jan 2025",
     achievements: [
-      "Developed a cross-platform e-commerce app using React Native, Node.js, and MySQL.",
-      "Built backend APIs and an admin dashboard for inventory, order tracking, and user administration.",
-      "Designed mobile interfaces and UI prototypes in Figma.",
-      "Integrated deployment and storage workflows with AWS services.",
+      "Developed a cross-platform e-commerce mobile application using React Native, Node.js, and MySQL to support product ordering and user account management.",
+      "Designed and implemented backend REST APIs and an administrative dashboard for inventory management, order tracking, and user administration.",
+      "Integrated the platform with AWS cloud infrastructure for application deployment, data storage, and system hosting.",
+      "Designed mobile interfaces and application prototypes in Figma to support development of the user-facing system.",
     ],
   },
   {
@@ -113,13 +152,27 @@ export const experience: ExperienceItem[] = [
     company: "Parwood Door Products Ltd.",
     dates: "May 2024 - Sept 2024",
     achievements: [
-      "Designed a MySQL engineering database with ~25 relational tables for manufacturing data.",
-      "Built a JavaScript engineering interface to reduce manual entry and improve workflow efficiency.",
-      "Implemented normalization, indexing, triggers, and stored procedures for reliable data operations.",
-      "Maintained Linux-based infrastructure on AWS (EC2, S3, IAM).",
+      "Designed and implemented a MySQL engineering database (~25 relational tables) to manage door system components and manufacturing data.",
+      "Developed a JavaScript-based interface for engineering data management, reducing manual data entry and improving workflow efficiency.",
+      "Implemented schema normalization, indexing, triggers, and stored procedures to ensure reliable and efficient data processing.",
+      "Deployed and maintained the system on AWS infrastructure (EC2, S3, IAM) and Linux servers, supporting application hosting and data storage.",
     ],
   },
 ];
+
+export const education: EducationItem = {
+  school: "Simon Fraser University",
+  degree: "Bachelor of Applied Science in Systems Engineering",
+  certificate: "Certificate in Computing Studies",
+  graduation: "Expected Graduation: May 2026",
+  coursework: [
+    "Feedback Control Systems (ENSC383)",
+    "Electro-Mechanical Sensors and Actuators (ENSC387)",
+    "Communication Networks (ENSC427)",
+    "Linear Systems (ENSC380)",
+    "Communication Systems (ENSC327)",
+  ],
+};
 
 export const projects: ProjectItem[] = [
   
@@ -315,6 +368,27 @@ export const projects: ProjectItem[] = [
       "Node.js APIs and MySQL backend manage transactions and inventory state.",
     ],
     highlights: ["Cross-platform mobile delivery", "Admin workflows", "AWS-backed deployment"],
+  },
+  {
+    id: "p2p-ddos-ns3",
+    title: "Peer-to-Peer Network DDoS Resilience Simulation",
+    shortDescription:
+      "Simulated distributed peer-to-peer networks under DDoS attacks using ns-3; analyzed congestion, node load, and power efficiency; evaluated mitigation strategies.",
+    fullDescription:
+      "Simulated distributed peer-to-peer networks under DDoS attacks using the ns-3 network simulator. Analyzed network congestion, node processing load, and power efficiency under attack conditions. Evaluated mitigation strategies to improve network performance and energy efficiency.",
+    techStack: ["ns-3", "C++", "Network simulation", "DDoS", "Linux"],
+    category: "Software",
+    architecture: [
+      "ns-3 simulation models distributed P2P topology and attack traffic.",
+      "Metrics collected for congestion, per-node processing load, and power consumption.",
+      "Mitigation strategies implemented and compared for resilience and efficiency.",
+    ],
+    highlights: [
+      "P2P network simulation under DDoS",
+      "Congestion and node load analysis",
+      "Power efficiency evaluation",
+      "Mitigation strategy comparison",
+    ],
   },
 ];
 

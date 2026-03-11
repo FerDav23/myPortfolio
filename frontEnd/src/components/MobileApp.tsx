@@ -3,7 +3,6 @@ import { MobileAbout } from "./MobileAbout";
 import { MobileEducation } from "./MobileEducation";
 import { MobileExperience } from "./MobileExperience";
 import { Footer } from "./Footer";
-import { MobileHardware } from "./MobileHardware";
 import { MobileHero } from "./MobileHero";
 import { MobileNavbar } from "./MobileNavbar";
 import { MobileSkills } from "./MobileSkills";
@@ -29,7 +28,6 @@ export function MobileApp({ isDarkMode, onToggleDarkMode }: MobileAppProps) {
         <MobileEducation />
         <MobileExperience />
         <MobileProjects />
-        <MobileHardware />
         <MobileContact />
       </main>
       <Footer />

@@ -1,3 +1,5 @@
+import { education } from "../data/portfolioData";
+
 export function Education() {
   return (
     <section id="education" className="section">
@@ -7,10 +9,20 @@ export function Education() {
           <h2>Academic background</h2>
         </div>
         <article className="card education-card">
-          <h3>Simon Fraser University</h3>
-          <p>Bachelor of Applied Science in Systems Engineering</p>
-          <p>Certificate in Computing Studies</p>
-          <p className="muted">Expected Graduation: May 2026</p>
+          <h3>{education.school}</h3>
+          <p>{education.degree}</p>
+          {education.certificate && <p>{education.certificate}</p>}
+          <p className="muted">{education.graduation}</p>
+          {education.coursework.length > 0 && (
+            <>
+              <h4 style={{ marginTop: "1rem", marginBottom: "0.5rem" }}>Relevant coursework</h4>
+              <ul className="muted" style={{ margin: 0, paddingLeft: "1.25rem" }}>
+                {education.coursework.map((course) => (
+                  <li key={course}>{course}</li>
+                ))}
+              </ul>
+            </>
+          )}
         </article>
       </div>
     </section>

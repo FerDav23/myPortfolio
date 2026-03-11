@@ -3,6 +3,14 @@ export type SkillCategory = {
   items: string[];
 };
 
+export type EducationItem = {
+  school: string;
+  degree: string;
+  certificate?: string;
+  graduation: string;
+  coursework: string[];
+};
+
 export type ExperienceItem = {
   role: string;
   company: string;

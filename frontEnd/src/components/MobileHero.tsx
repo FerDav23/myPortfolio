@@ -5,7 +5,7 @@ type MobileHeroProps = {
   onOpenResumeModal?: () => void;
 };
 
-export function MobileHero({ onOpenResumeModal }: MobileHeroProps) {
+export function MobileHero({ onOpenResumeModal: _onOpenResumeModal }: MobileHeroProps) {
   return (
     <section id="home" className="mobile-hero section">
       <div className="container mobile-hero-inner">
@@ -28,8 +28,9 @@ export function MobileHero({ onOpenResumeModal }: MobileHeroProps) {
           </ul>
           <div className="mobile-hero-cta">
             <a className="btn btn-primary" href="#projects">
-              View Projects
+              Projects
             </a>
+            {/* 
             <button
               type="button"
               className="btn btn-secondary"
@@ -37,9 +38,14 @@ export function MobileHero({ onOpenResumeModal }: MobileHeroProps) {
             >
               Resume
             </button>
+            */}
             <a className="btn btn-secondary" href="#contact">
               Contact
             </a>
+            <a className="btn btn-secondary" href="#experience">
+              Experience
+            </a>
+           
           </div>
         </div>
       </div>

@@ -1,11 +1,4 @@
-import { aboutNarrative } from "../data/portfolioData";
-
-const pillars = [
-  { title: "Hardware", detail: "Sensors, relays, power systems, instrumentation" },
-  { title: "Firmware", detail: "ESP32 control logic, MQTT communication, edge behavior" },
-  { title: "Cloud", detail: "AWS infrastructure, APIs, and data pipelines" },
-  { title: "Product", detail: "React and React Native user experiences" },
-];
+import { aboutNarrative, aboutPillars } from "../data/portfolioData";
 
 export function MobileAbout() {
   return (
@@ -24,7 +17,7 @@ export function MobileAbout() {
             ))}
           </div>
           <div className="mobile-about-pillars">
-            {pillars.map((pillar) => (
+            {aboutPillars.map((pillar) => (
               <div key={pillar.title} className="mobile-about-pillar">
                 <span className="pill-icon" aria-hidden>
                   ●
