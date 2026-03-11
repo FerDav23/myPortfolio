@@ -178,7 +178,7 @@ export const projects: ProjectItem[] = [
       "Full-stack loyalty platform with QR-based authentication and customer service history tracking.",
     fullDescription:
       "Built a full-stack loyalty and rewards platform for vehicle service operations with 100+ registered users. The platform centralizes account data, reward balance management, and service history while improving access speed through QR card authentication.",
-    techStack: ["React", "Node.js", "MySQL", "AWS", "REST APIs", "QR authentication"],
+    techStack: ["React", "Node.js", "MySQL", "AWS (EC2, S3, CloudFront, RDS, Aurora)", "REST APIs", "QR authentication"],
     category: "Full Stack Web Application",
     architecture: [
       "Frontend UI handles customer account and rewards operations.",
@@ -192,6 +192,65 @@ export const projects: ProjectItem[] = [
     ],
     githubUrl: "https://github.com/FerDav23/AUTOVIP-Rewards-System-Demo",
     demoUrl: "https://autovip-rewards.fernando-arias-navia.cv/",
+    images: [
+      {
+        src: "/projects-images/AUTOVIP-Rewards/Costumer-Rewards.PNG",
+        alt: "Customer rewards screen",
+        caption: "Customer rewards — rewards and points balance.",
+      },
+      {
+        src: "/projects-images/AUTOVIP-Rewards/Mobile-Costumer-Rewards.PNG",
+        alt: "Mobile customer rewards screen",
+        caption: "Mobile view — points balance, reward progress, and account navigation.",
+        phoneFrame: true,
+      },
+      {
+        src: "/projects-images/AUTOVIP-Rewards/Manager-Admin-Panel.PNG",
+        alt: "Manager admin panel",
+        caption: "Manager admin panel — manage users.",
+      },
+    ],
+  },
+  {
+    id: "vehicle-maintenance-web",
+    title: "Vehicle Maintenance Database Web Interface",
+    shortDescription:
+      "Web interface integrating a vehicle maintenance database with filtering and online service history for customers (FJ CIM).",
+    fullDescription:
+      "Developed a web interface integrating the company's vehicle maintenance database using React and Node.js. Implemented filtering and data access features, allowing customers to view their service history online. Provided technical consulting to company management on software systems and technology infrastructure.",
+    techStack: ["React", "Node.js", "Database integration", "AWS (EC2, S3, CloudFront, RDS, Aurora)"],
+    category: "Full Stack Web Application",
+    architecture: [
+      "React frontend provides filtering and data access for maintenance records.",
+      "Node.js backend integrates with the existing vehicle maintenance database.",
+      "Customers can view their service history online through the web interface.",
+    ],
+    highlights: [
+      "Web interface for vehicle maintenance database",
+      "Filtering and data access features",
+      "Customer-facing service history view",
+      "Technical consulting for systems and infrastructure",
+    ],
+    demoUrl: "https://car-hist.fernando-arias-navia.cv/",
+    githubUrl: "https://github.com/FerDav23/Vehicle-Maintenance-History-System-Demo",
+    images: [
+      {
+        src: "/projects-images/Car-Maint-Hist/History-Filters.PNG",
+        alt: "History filters screen",
+        caption: "Filtering and data access for maintenance records.",
+      },
+      {
+        src: "/projects-images/Car-Maint-Hist/History-Report-PC.PNG",
+        alt: "Service history report on desktop",
+        caption: "Customer service history view — desktop.",
+      },
+      {
+        src: "/projects-images/Car-Maint-Hist/History-Report-Mobile.PNG",
+        alt: "Service history report on mobile",
+        caption: "Service history — mobile view.",
+        phoneFrame: true,
+      },
+    ],
   },
   {
     id: "iot-smart-plug",
@@ -256,8 +315,6 @@ export const projects: ProjectItem[] = [
       "Node.js APIs and MySQL backend manage transactions and inventory state.",
     ],
     highlights: ["Cross-platform mobile delivery", "Admin workflows", "AWS-backed deployment"],
-    githubUrl: "https://github.com/",
-    demoUrl: "https://github.com/",
   },
 ];
 

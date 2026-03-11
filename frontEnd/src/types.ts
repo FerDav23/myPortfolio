@@ -17,6 +17,8 @@ export type ProjectImage = {
   src: string;
   alt: string;
   caption?: string;
+  /** When true, render in a phone-style frame (narrower, simulates device) */
+  phoneFrame?: boolean;
 };
 
 export type ProjectItem = {

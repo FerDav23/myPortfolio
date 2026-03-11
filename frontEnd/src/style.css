@@ -315,6 +315,14 @@ ul {
   margin-top: 1.35rem;
 }
 
+.hero-cta .btn {
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
 .btn {
   border-radius: 0.7rem;
   border: 1px solid var(--border);
@@ -972,6 +980,13 @@ ul {
   margin-top: 0.95rem;
 }
 
+.modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
 .modal-close {
   position: absolute;
   top: 0.55rem;
@@ -1083,6 +1098,24 @@ ul {
   vertical-align: middle;
 }
 
+/* Phone-style frame for mobile screenshots */
+.modal-gallery-item--phone {
+  max-width: 280px;
+  margin-inline: auto;
+  border-radius: 2rem;
+  overflow: hidden;
+  border: 3px solid var(--border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.modal-gallery-img-wrap--phone {
+  max-width: 100%;
+}
+
+.modal-gallery-img--phone {
+  border-radius: 1.5rem;
+}
+
 .modal-lightbox {
   position: fixed;
   inset: 0;
@@ -1135,6 +1168,13 @@ ul {
   height: auto;
   object-fit: contain;
   border-radius: 0.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.modal-lightbox-content--phone .modal-lightbox-img--phone {
+  max-width: 280px;
+  border-radius: 2.25rem;
+  border: 3px solid var(--border);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
