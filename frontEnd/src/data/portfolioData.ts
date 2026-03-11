@@ -8,8 +8,23 @@ export const profile = {
   location: "Vancouver, BC",
   phone: "+1 (236) 865-3397",
   email: "ariasfernando11@gmail.com",
-  resumeUrl:
-    "file:///C:/Users/Fernando/AppData/Roaming/Cursor/User/workspaceStorage/027142b956c465b8505dcf14da7d7be1/pdfs/ec1703b3-9b1e-48ed-ad33-94269b65b07a/Fernando%27s%20Resume%20(6).pdf",
+  /** Place your resume PDFs in frontEnd/public/ — filenames must match the paths below */
+  resumes: {
+    developer: {
+      url: "/Resume%20Fernando%20Arias%20(Full-stack%20Developer).pdf",
+      label: "Resume (Developer)",
+      description:
+        "Focused on software development: full-stack web, APIs, cloud, and mobile. Best for software engineer and full-stack roles.",
+    },
+    systemsEmbedded: {
+      url: "/Resume%20Fernando%20Arias%20(Systems%20and%20Embedded).pdf",
+      label: "Resume (Systems & Embedded)",
+      description:
+        "Highlights systems engineering, embedded systems, firmware, IoT, and hardware integration. Best for embedded and systems roles.",
+    },
+  } as const,
+  /** @deprecated Use resumes.developer or open resume modal instead */
+  resumeUrl: "/Resume%20Fernando%20Arias%20(Full-stack%20Developer).pdf",
   github: "https://github.com/FerDav23",
   linkedIn: "www.linkedin.com/in/fernando-arias-navia",
 };
@@ -108,7 +123,7 @@ export const experience: ExperienceItem[] = [
 
 export const projects: ProjectItem[] = [
   
-    {
+  {
     id: "shrimp-platform",
     title: "Shrimp Trading Platform",
     shortDescription:
@@ -157,6 +172,28 @@ export const projects: ProjectItem[] = [
     ],
   },
   {
+    id: "loyalty-platform",
+    title: "Customer Loyalty & Rewards Platform",
+    shortDescription:
+      "Full-stack loyalty platform with QR-based authentication and customer service history tracking.",
+    fullDescription:
+      "Built a full-stack loyalty and rewards platform for vehicle service operations with 100+ registered users. The platform centralizes account data, reward balance management, and service history while improving access speed through QR card authentication.",
+    techStack: ["React", "Node.js", "MySQL", "AWS", "REST APIs", "QR authentication"],
+    category: "Full Stack Web Application",
+    architecture: [
+      "Frontend UI handles customer account and rewards operations.",
+      "REST API services manage authentication, points, and service history records.",
+      "MySQL schema models loyalty accounts, transactions, and historical maintenance events.",
+    ],
+    highlights: [
+      "100+ users supported",
+      "QR-based login experience",
+      "Relational API-first architecture",
+    ],
+    githubUrl: "https://github.com/FerDav23/AUTOVIP-Rewards-System-Demo",
+    demoUrl: "https://autovip-rewards.fernando-arias-navia.cv/",
+  },
+  {
     id: "iot-smart-plug",
     title: "IoT Smart Plug Energy Monitoring System",
     shortDescription:
@@ -182,9 +219,7 @@ export const projects: ProjectItem[] = [
       "Real-time energy monitoring graphs",
       "Relay-based remote on/off control",
       "Automatic shutdown triggered by configurable limits",
-    ],
-    demoUrl: "https://github.com/",
-    githubUrl: "https://github.com/",
+    ]
   },
   {
     id: "transcription-glasses",
@@ -205,29 +240,6 @@ export const projects: ProjectItem[] = [
       "Power distribution design",
       "Custom SolidWorks enclosure integration",
     ],
-  },
-
-  {
-    id: "loyalty-platform",
-    title: "Customer Loyalty & Rewards Platform",
-    shortDescription:
-      "Full-stack loyalty platform with QR-based authentication and customer service history tracking.",
-    fullDescription:
-      "Built a full-stack loyalty and rewards platform for vehicle service operations with 100+ registered users. The platform centralizes account data, reward balance management, and service history while improving access speed through QR card authentication.",
-    techStack: ["React", "Node.js", "MySQL", "AWS", "REST APIs", "QR authentication"],
-    category: "Full Stack Web Application",
-    architecture: [
-      "Frontend UI handles customer account and rewards operations.",
-      "REST API services manage authentication, points, and service history records.",
-      "MySQL schema models loyalty accounts, transactions, and historical maintenance events.",
-    ],
-    highlights: [
-      "100+ users supported",
-      "QR-based login experience",
-      "Relational API-first architecture",
-    ],
-    githubUrl: "https://github.com/",
-    demoUrl: "https://github.com/",
   },
   {
     id: "mobile-ecommerce",

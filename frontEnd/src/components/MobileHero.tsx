@@ -1,7 +1,11 @@
 import { profile } from "../data/portfolioData";
 import profileImg from "../../assets/Fernando profile picture.jpeg";
 
-export function MobileHero() {
+type MobileHeroProps = {
+  onOpenResumeModal?: () => void;
+};
+
+export function MobileHero({ onOpenResumeModal }: MobileHeroProps) {
   return (
     <section id="home" className="mobile-hero section">
       <div className="container mobile-hero-inner">
@@ -26,9 +30,13 @@ export function MobileHero() {
             <a className="btn btn-primary" href="#projects">
               View Projects
             </a>
-            <a className="btn btn-secondary" href={profile.resumeUrl} target="_blank" rel="noreferrer">
+            <button
+              type="button"
+              className="btn btn-secondary"
+              onClick={onOpenResumeModal}
+            >
               Resume
-            </a>
+            </button>
             <a className="btn btn-secondary" href="#contact">
               Contact
             </a>

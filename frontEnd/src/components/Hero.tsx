@@ -1,7 +1,11 @@
 import { profile } from "../data/portfolioData";
 import profileImg from "../../assets/Fernando profile picture.jpeg";
 
-export function Hero() {
+type HeroProps = {
+  onOpenResumeModal?: () => void;
+};
+
+export function Hero({ onOpenResumeModal }: HeroProps) {
   return (
     <section id="home" className="hero section" style={{paddingTop: "3rem"}}>
       <div className="container hero-grid">
@@ -20,9 +24,13 @@ export function Hero() {
             <a className="btn btn-primary" href="#projects">
               View Projects
             </a>
-            <a className="btn btn-secondary" href={profile.resumeUrl} target="_blank" rel="noreferrer">
+            <button
+              type="button"
+              className="btn btn-secondary"
+              onClick={onOpenResumeModal}
+            >
               Download Resume
-            </a>
+            </button>
             <a className="btn btn-secondary" href="#contact">
               Contact Me
             </a>

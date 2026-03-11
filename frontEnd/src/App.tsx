@@ -8,6 +8,7 @@ import { Hardware } from "./components/Hardware";
 import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
 import { Projects } from "./components/Projects";
+import { ResumeModal } from "./components/ResumeModal";
 import { Skills } from "./components/Skills";
 import { MobileApp } from "./components/MobileApp";
 import { useIsMobile } from "./useIsMobile";
@@ -21,6 +22,7 @@ export default function App() {
   });
 
   const isMobile = useIsMobile(768);
+  const [resumeModalOpen, setResumeModalOpen] = useState(false);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -46,7 +48,7 @@ export default function App() {
     <>
       <Navbar isDarkMode={isDarkMode} onToggleDarkMode={() => setIsDarkMode((prev) => !prev)} />
       <main>
-        <Hero />
+        <Hero onOpenResumeModal={() => setResumeModalOpen(true)} />
         <About />
         <Skills />
         <Education />
@@ -56,6 +58,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      {resumeModalOpen && <ResumeModal onClose={() => setResumeModalOpen(false)} />}
     </>
   );
 }
