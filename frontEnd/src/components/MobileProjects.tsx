@@ -3,6 +3,13 @@ import { projects } from "../data/portfolioData";
 import type { ProjectItem } from "../types";
 import { ProjectModal } from "./ProjectModal";
 
+function getProjectCategoryLabel(project: ProjectItem): string {
+  if (!project.categories?.length) return "";
+  if (project.categories.length === 1) return project.categories[0];
+  if (project.categories.length === 2) return `${project.categories[0]} & ${project.categories[1]}`;
+  return project.categories.join(", ");
+}
+
 export function MobileProjects() {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
 
@@ -17,7 +24,7 @@ export function MobileProjects() {
           {projects.map((project) => (
             <article className="project-card" key={project.id}>
               <div className="project-image" aria-hidden>
-                <span>{project.category}</span>
+                <span>{getProjectCategoryLabel(project)}</span>
               </div>
               <div className="project-content">
                 <h3>{project.title}</h3>
