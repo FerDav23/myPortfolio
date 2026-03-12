@@ -1063,6 +1063,13 @@ ul {
   margin-bottom: 0.75rem;
 }
 
+.modal-gallery-description {
+  margin-top: -0.25rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
 .modal-gallery-list {
   display: flex;
   flex-direction: column;
@@ -1192,6 +1199,51 @@ ul {
   color: var(--muted);
   border-top: 1px solid var(--border);
   line-height: 1.4;
+}
+
+.modal-gallery-caption-title {
+  display: block;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.15rem;
+}
+
+.modal-gallery-caption-description {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--text);
+}
+
+.modal-gallery-caption-text {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.25rem;
+}
+
+/* Video section inside project modal */
+.modal-video {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-video-frame {
+  position: relative;
+  width: 100%;
+  /* 16:9 aspect ratio while spanning full modal width */
+  padding-top: 56.25%;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #000;
+}
+
+.modal-video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .fade-in-up {

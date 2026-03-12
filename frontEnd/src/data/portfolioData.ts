@@ -190,7 +190,7 @@ export const projects: ProjectItem[] = [
       "MySQL",
       "AWS (EC2, S3, CloudFront, RDS, Aurora)"
     ],
-    category: "Full Stack Web Application",
+    categories: ["Full Stack Web Application"],
     architecture: [
       "React dashboards provide role-specific views for producers, packers, and operators.",
       "Node.js/Express APIs enforce workflow rules and transaction consistency.",
@@ -204,26 +204,105 @@ export const projects: ProjectItem[] = [
       "Cloud infrastructure with AWS EC2, S3, CloudFront, IAM, RDS, and Aurora",
       "Scalable and secure architecture"
     ],
+    imagesSectionTitle: "Example Screens",
+    imagesSectionDescription: "Representative UI pages from the producer and packer dashboards.",
     demoUrl: "https://shrimp-platform.fernando-arias-navia.cv/login",
     githubUrl: "https://github.com/FerDav23/Shrimp-Trading-Platform-Demo",
     images: [
       {
         src: "/projects-images/Shrimp-project/producer-offer-preview.PNG",
         alt: "Producer offer preview screen",
-        caption: "Producer dashboard — view and accept offers from packers.",
+        title: "Producer Offers Dashboard",
+        description: "Example of the producer workflow: producers can review, accept, or reject offers from packers."
       },
       {
         src: "/projects-images/Shrimp-project/packers-offers.PNG",
         alt: "Packers offers view",
-        caption: "Packers console — create and manage offers to producers.",
+        title: "Packers Offer Management",
+        description: "Packer workflow: create and customize offers for multiple products, or upload an offer instead of creating it manually."
       },
       {
         src: "/projects-images/Shrimp-project/packers-purchases-console.PNG",
         alt: "Packers purchases console",
-        caption: "Purchases workflow — track and manage purchases from producers.",
+        title: "Purchases Workflow Console",
+        description: "Workflow for packers to purchase shrimp from a producer."
       },
     ],
   },
+  
+  {
+    id: "iot-smart-plug",
+    title: "IoT Smart Plug Energy Monitoring System",
+    shortDescription:
+      "ESP32-based smart plug with real-time telemetry, mobile control, and automatic shutdown logic.",
+    fullDescription:
+      "Designed and built a WiFi-enabled smart plug that combines embedded control, cloud telemetry, and mobile UX. The system collects energy data, stores time-series metrics, and gives users remote appliance control",
+    techStack: [
+      "ESP32",
+      "Raspberry Pi",
+      "MQTT",
+      "React Native",
+      "Node.js",
+      "PostgreSQL",
+      "TimescaleDB",
+      "QR provisioning",
+    ],
+    categories: ["Embedded", "Mobile App"],
+    architecture: [
+      "ESP32 firmware streams telemetry and listens for relay commands over MQTT.",
+      "Backend services process device events and persist time-series power data in TimescaleDB.",
+      "Mobile app provides onboarding, device control, and energy analytics visualization.",
+    ],
+    highlights: [
+      "Real-time energy monitoring graphs",
+      "Relay-based remote on/off control",
+      "Device registration using QR codes",
+    ],
+    youtubeUrl: "https://www.youtube.com/watch?v=UHodB0tB_2k",
+    youtubeTitle: "Smart Plug system demonstration",
+    imagesSectionTitle: "System Diagrams & App Screens",
+    imagesSectionDescription:
+      "From hardware and backend architecture to mobile UX, these views show how the smart plug system is engineered end-to-end.",
+    images: [
+            {
+        src: "/projects-images/IoT/Mqtt-smp-relatinship .PNG",
+        alt: "MQTT topic and smart plug relationship diagram",
+        title: "MQTT & Smart Plug Relationship",
+        description:
+          "Diagram showing how MQTT topics map to individual smart plugs for command, telemetry, and provisioning flows."
+      },
+      {
+        src: "/projects-images/IoT/Smart Plug Monitoring Circuit.png",
+        alt: "Smart plug monitoring diagram",
+        title: "Smart Plug Monitoring Circuit",
+        description:
+          "High-level circuit showing current sensing, relay control, power measurement, and ESP32 interfacing for the smart plug."
+      },
+      {
+        src: "/projects-images/IoT/2D Smart Plug Enclosure Schematic.png",
+        alt: "2D smart plug enclosure schematic",
+        title: "2D Enclosure Schematic",
+        description:
+          "Mechanical 2D drawing of custom Smart Plug enclosure (SolidWorks)."
+      },
+      {
+        src: "/projects-images/IoT/Back End internal structure.PNG",
+        alt: "Backend internal structure diagram",
+        title: "Backend Internal Structure",
+        description:
+          "Logical view of the backend services that ingest MQTT telemetry, persist time-series data, and expose APIs to the mobile app."
+      },
+      {
+        src: "/projects-images/IoT/Room page example, Figma design.png",
+        alt: "Room page example in Figma design",
+        title: "Room & Device Control Screen",
+        description:
+          "Example of the room page used to control smart plugs and visualize energy metrics from the app."
+      },
+
+    ],
+  },
+
   {
     id: "loyalty-platform",
     title: "Customer Loyalty & Rewards Platform",
@@ -232,7 +311,7 @@ export const projects: ProjectItem[] = [
     fullDescription:
       "Built a full-stack loyalty and rewards platform for vehicle service operations with 100+ registered users. The platform centralizes account data, reward balance management, and service history while improving access speed through QR card authentication.",
     techStack: ["React", "Node.js", "MySQL", "AWS (EC2, S3, CloudFront, RDS, Aurora)", "REST APIs", "QR authentication"],
-    category: "Full Stack Web Application",
+    categories: ["Full Stack Web Application"],
     architecture: [
       "Frontend UI handles customer account and rewards operations.",
       "REST API services manage authentication, points, and service history records.",
@@ -243,24 +322,29 @@ export const projects: ProjectItem[] = [
       "QR-based login experience",
       "Relational API-first architecture",
     ],
+    imagesSectionTitle: "Example Screens",
+    imagesSectionDescription: "Representative UI pages from the customer rewards and manager admin panel.",
     githubUrl: "https://github.com/FerDav23/AUTOVIP-Rewards-System-Demo",
     demoUrl: "https://autovip-rewards.fernando-arias-navia.cv/",
     images: [
       {
         src: "/projects-images/AUTOVIP-Rewards/Costumer-Rewards.PNG",
         alt: "Customer rewards screen",
-        caption: "Customer rewards — rewards and points balance.",
+        title: "Customer Rewards Dashboard",
+        description: "Customer view where users can see their rewards and points balance."
       },
       {
         src: "/projects-images/AUTOVIP-Rewards/Mobile-Costumer-Rewards.PNG",
         alt: "Mobile customer rewards screen",
-        caption: "Mobile view — points balance, reward progress, and account navigation.",
+        title: "Mobile Customer Rewards Dashboard",
+        description: "Customer rewards dashboard in mobile view.",
         phoneFrame: true,
       },
       {
         src: "/projects-images/AUTOVIP-Rewards/Manager-Admin-Panel.PNG",
         alt: "Manager admin panel",
-        caption: "Manager admin panel — manage users.",
+        title: "Manager Admin Panel",
+        description: "Manager admin panel for managing users, user vehicles, and points transactions."
       },
     ],
   },
@@ -270,9 +354,9 @@ export const projects: ProjectItem[] = [
     shortDescription:
       "Web interface integrating a vehicle maintenance database with filtering and online service history for customers (FJ CIM).",
     fullDescription:
-      "Developed a web interface integrating the company's vehicle maintenance database using React and Node.js. Implemented filtering and data access features, allowing customers to view their service history online. Provided technical consulting to company management on software systems and technology infrastructure.",
+      "Developed a web interface integrating the company's vehicle maintenance database using React and Node.js. Implemented filtering and data access features, allowing customers to view their service history online.",
     techStack: ["React", "Node.js", "Database integration", "AWS (EC2, S3, CloudFront, RDS, Aurora)"],
-    category: "Full Stack Web Application",
+    categories: ["Full Stack Web Application"],
     architecture: [
       "React frontend provides filtering and data access for maintenance records.",
       "Node.js backend integrates with the existing vehicle maintenance database.",
@@ -282,57 +366,34 @@ export const projects: ProjectItem[] = [
       "Web interface for vehicle maintenance database",
       "Filtering and data access features",
       "Customer-facing service history view",
-      "Technical consulting for systems and infrastructure",
     ],
+    imagesSectionTitle: "Example Screens",
+    imagesSectionDescription: "Representative UI pages from the customer service history view.",
     demoUrl: "https://car-hist.fernando-arias-navia.cv/",
     githubUrl: "https://github.com/FerDav23/Vehicle-Maintenance-History-System-Demo",
     images: [
       {
         src: "/projects-images/Car-Maint-Hist/History-Filters.PNG",
         alt: "History filters screen",
-        caption: "Filtering and data access for maintenance records.",
+        title: "History Filters",
+        description: "Filters available for the customer service history view."
       },
       {
         src: "/projects-images/Car-Maint-Hist/History-Report-PC.PNG",
         alt: "Service history report on desktop",
-        caption: "Customer service history view — desktop.",
+        title: "Customer Service History View",
+        description: "Customer service history view on desktop."
       },
       {
         src: "/projects-images/Car-Maint-Hist/History-Report-Mobile.PNG",
         alt: "Service history report on mobile",
-        caption: "Service history — mobile view.",
+        title: "Customer Service History View",
+        description: "Customer service history view on mobile.",
         phoneFrame: true,
       },
     ],
   },
-  {
-    id: "iot-smart-plug",
-    title: "IoT Smart Plug Energy Monitoring System",
-    shortDescription:
-      "ESP32-based smart plug with real-time telemetry, mobile control, and automatic shutdown logic.",
-    fullDescription:
-      "Designed and built a WiFi-enabled smart plug that combines embedded control, cloud telemetry, and mobile UX. The system collects energy data, stores time-series metrics, and gives users remote appliance control with configurable protection thresholds.",
-    techStack: [
-      "ESP32",
-      "MQTT",
-      "React Native",
-      "Node.js",
-      "PostgreSQL",
-      "TimescaleDB",
-      "QR provisioning",
-    ],
-    category: "Embedded",
-    architecture: [
-      "ESP32 firmware streams telemetry and listens for relay commands over MQTT.",
-      "Backend services process device events and persist time-series power data in TimescaleDB.",
-      "Mobile app provides onboarding, device control, and energy analytics visualization.",
-    ],
-    highlights: [
-      "Real-time energy monitoring graphs",
-      "Relay-based remote on/off control",
-      "Automatic shutdown triggered by configurable limits",
-    ]
-  },
+
   {
     id: "transcription-glasses",
     title: "Real-Time Transcription Glasses",
@@ -341,7 +402,7 @@ export const projects: ProjectItem[] = [
     fullDescription:
       "Contributed to the embedded hardware design of a wearable transcription system by engineering the battery and power subsystem. The project prioritized safety, reliability, and compact integration of electronics inside a custom frame.",
     techStack: ["Battery management systems", "Embedded hardware", "Power electronics", "SolidWorks"],
-    category: "Embedded",
+    categories: ["Embedded"],
     architecture: [
       "Battery management subsystem regulates charging and discharge behavior.",
       "Power routing ensures stable operation across sensing and processing modules.",
@@ -361,7 +422,7 @@ export const projects: ProjectItem[] = [
     fullDescription:
       "Developed a React Native mobile commerce app integrated with Node.js APIs and MySQL data models. The solution includes administrator controls for inventory management, order tracking, and user administration.",
     techStack: ["React Native", "Node.js", "Express", "MySQL", "AWS"],
-    category: "Software",
+    categories: ["Software", "Mobile App"],
     architecture: [
       "React Native mobile clients provide product browsing and order flow.",
       "Admin dashboard supports operational management tasks and user oversight.",
@@ -377,7 +438,7 @@ export const projects: ProjectItem[] = [
     fullDescription:
       "Simulated distributed peer-to-peer networks under DDoS attacks using the ns-3 network simulator. Analyzed network congestion, node processing load, and power efficiency under attack conditions. Evaluated mitigation strategies to improve network performance and energy efficiency.",
     techStack: ["ns-3", "C++", "Network simulation", "DDoS", "Linux"],
-    category: "Software",
+    categories: ["Software"],
     architecture: [
       "ns-3 simulation models distributed P2P topology and attack traffic.",
       "Metrics collected for congestion, per-node processing load, and power consumption.",
@@ -397,4 +458,5 @@ export const projectCategories: Array<ProjectCategory | "All"> = [
   "Software",
   "Embedded",
   "Full Stack Web Application",
+  "Mobile App",
 ];

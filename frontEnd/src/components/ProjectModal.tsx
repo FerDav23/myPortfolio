@@ -1,6 +1,36 @@
 import { useEffect, useState } from "react";
 import type { ProjectItem } from "../types";
 
+const getYouTubeEmbedUrl = (url?: string | null): string | null => {
+  if (!url) return null;
+
+  try {
+    const parsed = new URL(url);
+    const host = parsed.hostname.toLowerCase();
+
+    // Already an embed URL
+    if (parsed.pathname.startsWith("/embed/")) {
+      return parsed.toString();
+    }
+
+    // Standard watch URL: https://www.youtube.com/watch?v=VIDEO_ID
+    if (host.includes("youtube.com") && parsed.pathname === "/watch") {
+      const id = parsed.searchParams.get("v");
+      return id ? `https://www.youtube.com/embed/${id}` : null;
+    }
+
+    // Short URL: https://youtu.be/VIDEO_ID
+    if (host === "youtu.be") {
+      const id = parsed.pathname.replace("/", "").split("/")[0];
+      return id ? `https://www.youtube.com/embed/${id}` : null;
+    }
+
+    return null;
+  } catch {
+    return null;
+  }
+};
+
 type ProjectModalProps = {
   project: ProjectItem;
   onClose: () => void;
@@ -10,6 +40,8 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
   const [expandedImageIndex, setExpandedImageIndex] = useState<number | null>(null);
   const hasImages = project.images && project.images.length > 0;
   const expandedImage = expandedImageIndex !== null && project.images ? project.images[expandedImageIndex] : null;
+  const imagesSectionTitle = project.imagesSectionTitle || "Example Pages";
+  const youtubeEmbedUrl = getYouTubeEmbedUrl(project.youtubeUrl);
 
   useEffect(() => {
     if (expandedImageIndex === null) return;
@@ -60,9 +92,27 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           </div>
         )}
 
+        {youtubeEmbedUrl && (
+          <div className="modal-video">
+            <h4 style={{ marginBottom: "0.5rem" }}>{project.youtubeTitle || "Video Demo"}</h4>
+            <div className="modal-video-frame">
+              <iframe
+                src={youtubeEmbedUrl}
+                title={`${project.title} demo video`}
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        )}
+
         {hasImages && (
           <div className="modal-gallery">
-            <h4>Example Pages</h4>
+            <h4>{imagesSectionTitle}</h4>
+            {project.imagesSectionDescription && (
+              <p className="modal-gallery-description">{project.imagesSectionDescription}</p>
+            )}
             <div className="modal-gallery-list">
               {project.images!.map((img, index) => (
                 <figure
@@ -82,8 +132,24 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                       className={`modal-gallery-img${img.phoneFrame ? " modal-gallery-img--phone" : ""}`}
                     />
                   </button>
-                  {img.caption && (
-                    <figcaption className="modal-gallery-caption">{img.caption}</figcaption>
+                  {(img.title || img.description || img.caption) && (
+                    <figcaption className="modal-gallery-caption">
+                      {img.title && (
+                        <span className="modal-gallery-caption-title">
+                          {img.title}
+                        </span>
+                      )}
+                      {img.description && (
+                        <span className="modal-gallery-caption-description">
+                          {img.description}
+                        </span>
+                      )}
+                      {img.caption && (
+                        <span className="modal-gallery-caption-text">
+                          {img.caption}
+                        </span>
+                      )}
+                    </figcaption>
                   )}
                 </figure>
               ))}

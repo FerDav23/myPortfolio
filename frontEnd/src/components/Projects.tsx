@@ -11,8 +11,17 @@ export function Projects() {
     if (selectedCategory === "All") {
       return projects;
     }
-    return projects.filter((project) => project.category === selectedCategory);
+    return projects.filter((project) => project.categories.includes(selectedCategory));
   }, [selectedCategory]);
+
+  const getProjectCategoryLabel = (project: ProjectItem) => {
+    if (!project.categories || project.categories.length === 0) return "";
+    if (project.categories.length === 1) return project.categories[0];
+    if (project.categories.length === 2) {
+      return `${project.categories[0]} & ${project.categories[1]}`;
+    }
+    return project.categories.join(", ");
+  };
 
   return (
     <section id="projects" className="section">
@@ -36,7 +45,7 @@ export function Projects() {
           {filteredProjects.map((project) => (
             <article className="project-card" key={project.id}>
               <div className="project-image" aria-hidden>
-                <span>{project.category}</span>
+                <span>{getProjectCategoryLabel(project)}</span>
               </div>
               <div className="project-content">
                 <h3>{project.title}</h3>
