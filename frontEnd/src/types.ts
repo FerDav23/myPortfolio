@@ -18,7 +18,7 @@ export type ExperienceItem = {
   achievements: string[];
 };
 
-export type ProjectCategory = "Software" | "Embedded" | "Full Stack Web Application" | "Mobile App";
+export type ProjectCategory = "Network Analysis" | "Embedded" | "Full Stack Web Application" | "Mobile App" | "Mechanical Design" | "Circuits Design";
 
 /** Optional image with subtitle for project modal gallery */
 export type ProjectImage = {

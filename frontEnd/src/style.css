@@ -675,6 +675,16 @@ ul {
   color: var(--primary);
 }
 
+.project-image-label {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
 .project-content {
   padding: 1rem;
   display: flex;

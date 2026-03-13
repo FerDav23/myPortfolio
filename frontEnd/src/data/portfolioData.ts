@@ -247,7 +247,7 @@ export const projects: ProjectItem[] = [
       "TimescaleDB",
       "QR provisioning",
     ],
-    categories: ["Embedded", "Mobile App"],
+    categories: ["Embedded", "Mobile App", "Circuits Design", "Mechanical Design"],
     architecture: [
       "ESP32 firmware streams telemetry and listens for relay commands over MQTT.",
       "Backend services process device events and persist time-series power data in TimescaleDB.",
@@ -353,6 +353,42 @@ export const projects: ProjectItem[] = [
       },
     ],
   },
+
+  {
+    id: "p2p-ddos-ns3",
+    title: "Peer-to-Peer Network DDoS Resilience Simulation",
+    shortDescription:
+      "Simulated distributed peer-to-peer networks under DDoS attacks using ns-3; analyzed congestion, node load, and power efficiency; evaluated mitigation strategies.",
+    fullDescription:
+      "Simulated distributed peer-to-peer networks under DDoS attacks using the ns-3 network simulator. Analyzed network congestion, node processing load, and power efficiency under attack conditions. Evaluated mitigation strategies to improve network performance and energy efficiency.",
+    techStack: ["ns-3", "C++", "Network simulation", "DDoS", "Linux"],
+    categories: ["Network Analysis"],
+    architecture: [
+      "ns-3 simulation models distributed P2P topology and attack traffic.",
+      "Metrics collected for congestion, per-node processing load, and power consumption.",
+      "Mitigation strategies implemented and compared for resilience and efficiency.",
+    ],
+    highlights: [
+      "P2P network simulation under DDoS",
+      "Congestion and node load analysis",
+      "Power efficiency evaluation",
+      "Mitigation strategy comparison",
+    ],
+    githubUrl: "https://github.com/FerDav23/Peer-to-Peer-Project",
+    imagesSectionTitle: "Simulation Topology",
+    imagesSectionDescription:
+      "Visualization of the peer-to-peer network topology used to study DDoS behavior, congestion, and load distribution.",
+    images: [
+      {
+        src: "/projects-images/ns3/p2p-network.PNG",
+        alt: "Peer-to-peer network topology diagram",
+        title: "P2P Network Topology",
+        description:
+          "Graph of the distributed peer-to-peer nodes and links used in the ns-3 simulation to evaluate DDoS resilience and traffic flow.",
+      },
+    ],
+  },
+
   {
     id: "vehicle-maintenance-web",
     title: "Vehicle Maintenance Database Web Interface",
@@ -403,22 +439,47 @@ export const projects: ProjectItem[] = [
     id: "transcription-glasses",
     title: "Real-Time Transcription Glasses",
     shortDescription:
-      "Wearable embedded system focused on battery management, safe power distribution, and mechanical enclosure design.",
+      "Capstone project (ENSC440 Company 4, Fall 2025). My contributions: power supply system design and ClarifEye Mk1.2 enclosure design.",
     fullDescription:
-      "Contributed to the embedded hardware design of a wearable transcription system by engineering the battery and power subsystem. The project prioritized safety, reliability, and compact integration of electronics inside a custom frame.",
-    techStack: ["Battery management systems", "Embedded hardware", "Power electronics", "SolidWorks"],
-    categories: ["Embedded"],
+      "As part of ENSC440 Company 4 (Fall 2025 capstone), I contributed to this wearable transcription system with two main deliverables: (1) the design of the power supply system, and (2) the mechanical enclosure design for the ClarifEye Mk1.2. The work emphasized safety, reliability, and compact integration of electronics inside the custom frame.",
+    techStack: ["Battery management systems", "Power electronics", "Circuits design", "SolidWorks"],
+    categories: ["Mechanical Design", "Circuits Design"],
     architecture: [
       "Battery management subsystem regulates charging and discharge behavior.",
       "Power routing ensures stable operation across sensing and processing modules.",
-      "Custom enclosure geometry integrates electronics into wearable form factor.",
+      "ClarifEye Mk1.2 enclosure geometry integrates electronics into wearable form factor.",
     ],
     highlights: [
-      "Battery management and safety logic",
+      "Power supply system design (battery management and safety logic)",
       "Power distribution design",
-      "Custom SolidWorks enclosure integration",
+      "ClarifEye Mk1.2 enclosure design (SolidWorks)",
     ],
-  },
+    imagesSectionTitle: "Power Supply System & ClarifEye Mk1.2 Enclosure",
+    imagesSectionDescription:
+      "Power supply system layout and ClarifEye Mk1.2 enclosure design for the wearable transcription glasses (ENSC440 Company 4, Fall 2025).",
+    images: [
+      {
+        src: "/projects-images/VoxLens/BMS.PNG",
+        alt: "Battery management system schematic",
+        title: "Power Supply System Layout",
+        description:
+          "Schematic of the power supply subsystem I designed: cell connections, protection circuitry, and power boosting.",
+      },
+      {
+        src: "/projects-images/VoxLens/ClarifEye-mk2-3D-design1.png",
+        alt: "ClarifEye Mk1.2 enclosure, front view",
+        title: "ClarifEye Mk1.2 Enclosure -Open Frame View"
+       
+      },
+      {
+        src: "/projects-images/VoxLens/ClarifEye-mk2-3D-design2.png",
+        alt: "ClarifEye Mk1.2 enclosure, angled view",
+        title: "ClarifEye Mk1.2 Enclosure -Closed Frame View"
+        
+      },
+    ],
+  }
+/*
   {
     id: "mobile-ecommerce",
     title: "Mobile E-Commerce Application",
@@ -435,33 +496,16 @@ export const projects: ProjectItem[] = [
     ],
     highlights: ["Cross-platform mobile delivery", "Admin workflows", "AWS-backed deployment"],
   },
-  {
-    id: "p2p-ddos-ns3",
-    title: "Peer-to-Peer Network DDoS Resilience Simulation",
-    shortDescription:
-      "Simulated distributed peer-to-peer networks under DDoS attacks using ns-3; analyzed congestion, node load, and power efficiency; evaluated mitigation strategies.",
-    fullDescription:
-      "Simulated distributed peer-to-peer networks under DDoS attacks using the ns-3 network simulator. Analyzed network congestion, node processing load, and power efficiency under attack conditions. Evaluated mitigation strategies to improve network performance and energy efficiency.",
-    techStack: ["ns-3", "C++", "Network simulation", "DDoS", "Linux"],
-    categories: ["Software"],
-    architecture: [
-      "ns-3 simulation models distributed P2P topology and attack traffic.",
-      "Metrics collected for congestion, per-node processing load, and power consumption.",
-      "Mitigation strategies implemented and compared for resilience and efficiency.",
-    ],
-    highlights: [
-      "P2P network simulation under DDoS",
-      "Congestion and node load analysis",
-      "Power efficiency evaluation",
-      "Mitigation strategy comparison",
-    ],
-  },
+*/
+
 ];
 
 export const projectCategories: Array<ProjectCategory | "All"> = [
   "All",
-  "Software",
+  "Network Analysis",
   "Embedded",
   "Full Stack Web Application",
   "Mobile App",
+  "Mechanical Design",
+  "Circuits Design",
 ];

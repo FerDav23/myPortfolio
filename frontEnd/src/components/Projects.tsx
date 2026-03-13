@@ -22,7 +22,9 @@ export function Projects() {
     if (project.categories.length === 2) {
       return `${project.categories[0]} & ${project.categories[1]}`;
     }
-    return project.categories.join(", ");
+    const allButLast = project.categories.slice(0, -1);
+    const last = project.categories[project.categories.length - 1];
+    return `${allButLast.join(", ")} & ${last}`;
   };
 
   return (
@@ -47,7 +49,7 @@ export function Projects() {
           {filteredProjects.map((project) => (
             <article className="project-card" key={project.id}>
               <div className="project-image" aria-hidden>
-                <span>{getProjectCategoryLabel(project)}</span>
+                <span className="project-image-label">{getProjectCategoryLabel(project)}</span>
               </div>
               <div className="project-content">
                 <h3>{project.title}</h3>
