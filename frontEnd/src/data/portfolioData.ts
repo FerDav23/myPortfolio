@@ -273,7 +273,8 @@ export const projects: ProjectItem[] = [
         alt: "MQTT topic and smart plug relationship diagram",
         title: "MQTT & Smart Plug Relationship",
         description:
-          "Diagram showing how MQTT topics map to individual smart plugs for command, telemetry, and provisioning flows."
+          "Diagram showing how MQTT topics map to individual smart plugs for command, telemetry, and provisioning flows.",
+        caption: "Graph created by Dante Umpherville‑Choy and adapted by Fernando Arias."
       },
       {
         src: "/projects-images/IoT/Smart Plug Monitoring Circuit.png",
