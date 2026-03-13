@@ -1,11 +1,13 @@
 import { useMemo, useState } from "react";
 import { projectCategories, projects } from "../data/portfolioData";
 import type { ProjectCategory, ProjectItem } from "../types";
+import { MobileDemoModal } from "./MobileDemoModal";
 import { ProjectModal } from "./ProjectModal";
 
 export function Projects() {
   const [selectedCategory, setSelectedCategory] = useState<ProjectCategory | "All">("All");
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+  const [mobileDemoProject, setMobileDemoProject] = useState<ProjectItem | null>(null);
 
   const filteredProjects = useMemo(() => {
     if (selectedCategory === "All") {
@@ -61,11 +63,25 @@ export function Projects() {
                   <button type="button" className="project-btn project-btn-primary" onClick={() => setSelectedProject(project)}>
                     View Details
                   </button>
-                  {project.demoUrl && (
-                    <a className="project-btn project-btn-link" href={project.demoUrl} target="_blank" rel="noreferrer">
-                      Live Demo
-                    </a>
-                  )}
+                  {project.demoUrl &&
+                    (project.isMobileDemo && project.demoQrImage ? (
+                      <button
+                        type="button"
+                        className="project-btn project-btn-link"
+                        onClick={() => setMobileDemoProject(project)}
+                      >
+                        Live Demo
+                      </button>
+                    ) : (
+                      <a
+                        className="project-btn project-btn-link"
+                        href={project.demoUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Live Demo
+                      </a>
+                    ))}
                   {project.githubUrl && (
                     <a className="project-btn project-btn-link" href={project.githubUrl} target="_blank" rel="noreferrer">
                       GitHub
@@ -78,6 +94,14 @@ export function Projects() {
         </div>
       </div>
       {selectedProject ? <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} /> : null}
+      {mobileDemoProject?.demoUrl && mobileDemoProject?.demoQrImage ? (
+        <MobileDemoModal
+          demoUrl={mobileDemoProject.demoUrl}
+          demoQrImage={mobileDemoProject.demoQrImage}
+          onClose={() => setMobileDemoProject(null)}
+          projectTitle={mobileDemoProject.title}
+        />
+      ) : null}
     </section>
   );
 }

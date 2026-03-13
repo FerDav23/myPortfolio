@@ -1055,6 +1055,51 @@ ul {
   color: var(--primary);
 }
 
+/* Mobile demo modal (QR code + link + instructions) */
+.mobile-demo-modal {
+  width: min(420px, 100%);
+}
+
+.mobile-demo-modal-title {
+  margin: 0 0 0.75rem;
+}
+
+.mobile-demo-modal-instruction {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+}
+
+.mobile-demo-modal-qr-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.mobile-demo-modal-qr {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+}
+
+.mobile-demo-modal-link-section {
+  margin-bottom: 1rem;
+}
+
+.mobile-demo-modal-browser-hint {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.mobile-demo-modal-browser-hint kbd {
+  font-family: inherit;
+  font-size: 0.85em;
+  padding: 0.15em 0.4em;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+}
+
 .modal-gallery {
   margin-top: 1.5rem;
 }
@@ -1943,6 +1988,11 @@ ul {
   .mobile-project-list .project-card {
     max-width: 100%;
     min-width: 0;
+  }
+
+  .mobile-project-modal-wrapper .modal-card {
+    width: 100%;
+    max-height: 90vh;
   }
 
   .mobile-contact {

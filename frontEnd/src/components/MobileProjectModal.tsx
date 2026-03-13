@@ -32,12 +32,12 @@ const getYouTubeEmbedUrl = (url?: string | null): string | null => {
   }
 };
 
-type ProjectModalProps = {
+type MobileProjectModalProps = {
   project: ProjectItem;
   onClose: () => void;
 };
 
-export function ProjectModal({ project, onClose }: ProjectModalProps) {
+export function MobileProjectModal({ project, onClose }: MobileProjectModalProps) {
   const [expandedImageIndex, setExpandedImageIndex] = useState<number | null>(null);
   const [mobileDemoOpen, setMobileDemoOpen] = useState(false);
   const hasImages = project.images && project.images.length > 0;
@@ -71,25 +71,16 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
         {(project.demoUrl || project.githubUrl) && (
           <div className="modal-actions">
-            {project.demoUrl &&
-              (project.isMobileDemo && project.demoQrImage ? (
-                <button
-                  type="button"
-                  className="project-btn project-btn-link"
-                  onClick={() => setMobileDemoOpen(true)}
-                >
-                  Live demo
-                </button>
-              ) : (
-                <a
-                  className="project-btn project-btn-link"
-                  href={project.demoUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Live demo
-                </a>
-              ))}
+            {project.demoUrl && (
+              <a
+                className="project-btn project-btn-link"
+                href={project.demoUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Live demo
+              </a>
+            )}
             {project.githubUrl && (
               <a
                 className="project-btn project-btn-link"

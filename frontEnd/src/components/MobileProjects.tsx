@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { projects } from "../data/portfolioData";
 import type { ProjectItem } from "../types";
-import { ProjectModal } from "./ProjectModal";
+import { MobileProjectModal } from "./MobileProjectModal";
 
 function getProjectCategoryLabel(project: ProjectItem): string {
   if (!project.categories?.length) return "";
@@ -71,7 +71,7 @@ export function MobileProjects() {
         </div>
       </div>
       {selectedProject ? (
-        <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+        <MobileProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
       ) : null}
     </section>
   );

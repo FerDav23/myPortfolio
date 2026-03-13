@@ -50,6 +50,10 @@ export type ProjectItem = {
   /** Optional description shown under the images section title */
   imagesSectionDescription?: string;
   demoUrl?: string;
+  /** When true, Live Demo opens a modal with QR code and instructions instead of linking directly */
+  isMobileDemo?: boolean;
+  /** Path to QR code image for mobile demo modal (e.g. /projects-images/IoT/demo-qr-code.png) */
+  demoQrImage?: string;
   githubUrl?: string;
   /** Optional YouTube URL for an embedded demo in the project modal */
   youtubeUrl?: string;
