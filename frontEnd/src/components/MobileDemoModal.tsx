@@ -40,6 +40,40 @@ export function MobileDemoModal({ demoUrl, demoQrImage, onClose, projectTitle }:
         <div className="mobile-demo-modal-qr-wrap">
           <img src={demoQrImage} alt="QR code for app demo" className="mobile-demo-modal-qr" />
         </div>
+        
+        <div className="muted mobile-demo-modal-browser-hint">
+        <p>You can also preview the mobile version in your browser. Click “Open in browser” and follow the steps below.</p>
+          <ol>
+            <li>
+              <strong>Open Developer Tools</strong>
+              <ul>
+                <li>
+                  Chrome / Edge / Brave / Opera: <kbd>Ctrl + Shift + I</kbd>
+                </li>
+                <li>
+                  Firefox: <kbd>Ctrl + Shift + I</kbd>
+                </li>
+                <li>
+                  Safari (Mac): <kbd>Cmd + Option + I</kbd>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>Enable Device / Responsive Mode</strong>
+              <ul>
+                <li>
+                  Chrome / Edge / Brave / Opera: <kbd>Ctrl + Shift + M</kbd>
+                </li>
+                <li>
+                  Firefox: <kbd>Ctrl + Shift + M</kbd>
+                </li>
+                <li>
+                  Safari (Mac): <kbd>Cmd + Shift + M</kbd>
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </div>
         <div className="mobile-demo-modal-link-section">
           <a
             className="project-btn project-btn-link"
@@ -50,11 +84,6 @@ export function MobileDemoModal({ demoUrl, demoQrImage, onClose, projectTitle }:
             Open in browser
           </a>
         </div>
-        <p className="muted mobile-demo-modal-browser-hint">
-          You can also open the link in your browser. To better appreciate the mobile app, switch to
-          mobile device view: press <kbd>Ctrl+Shift+I</kbd> to open DevTools, then{" "}
-          <kbd>Ctrl+Shift+M</kbd> to toggle the device toolbar.
-        </p>
       </div>
     </div>
   );
