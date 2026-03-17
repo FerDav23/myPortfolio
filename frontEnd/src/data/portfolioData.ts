@@ -2,9 +2,9 @@ import type { EducationItem, ExperienceItem, ProjectCategory, ProjectItem, Skill
 
 export const profile = {
   name: "Fernando David Arias Navia",
-  title: "Systems Engineering Graduate (May 2026) | Embedded, Signal & Network Systems | Full-Stack Developer",
+  title: "Systems Engineering Graduate (May 2026) | Full-Stack Developer | Cloud, Linux Servers, Embedded & Network Systems",
   summary:
-    "Systems engineering graduate with experience developing embedded and distributed systems integrating sensors, actuators, communication networks, and cloud infrastructure. Skilled in embedded firmware development, signal analysis, networked system design, and full-stack software development for connected systems. Experienced building IoT devices, real-time monitoring systems, and cyber-physical platforms using C/C++, Python, JavaScript, MATLAB, Git, and Linux.",
+  "Systems engineering graduate with experience developing and maintaining embedded, distributed, and cloud-based systems integrating sensors, actuators, communication networks, and backend infrastructure. Skilled in Linux server deployment and maintenance, AWS-based hosting, system monitoring, troubleshooting production issues, and full-stack software development for connected systems. Experienced building IoT devices, real-time monitoring systems, and cyber-physical platforms using C/C++, Python, JavaScript, PHP, MATLAB, Git, and Linux.",
   location: "Vancouver, BC",
   phone: "+1 (236) 865-3397",
   email: "ariasfernando11@gmail.com",
@@ -30,15 +30,15 @@ export const profile = {
 };
 
 export const aboutNarrative = [
-  "I combine systems engineering foundations with hands-on software delivery to build products that connect devices, users, and data. My work spans embedded firmware and hardware integration all the way to cloud infrastructure, REST APIs, mobile applications, and full-stack dashboards. I enjoy building practical engineering solutions in IoT, automation, and full-stack platforms where reliability, usability, and measurable business impact matter.",
-  "I use signal processing and data analysis (e.g. Fourier and frequency-domain analysis, time-series, MATLAB/Simulink) to model and evaluate system behavior. I also work with networking and distributed systems (TCP/IP, MQTT, peer-to-peer, ns-3 simulation) to design and test connected and cyber-physical systems.",
+  "I combine systems engineering foundations with hands-on software delivery to build products that connect devices, users, and data. My work spans embedded firmware and hardware integration all the way to cloud infrastructure, Linux server deployment and maintenance, REST APIs, mobile applications, and full-stack dashboards. I enjoy building practical engineering solutions in IoT, automation, and software platforms where reliability, usability, and measurable business impact matter.",
+  "I use signal processing and data analysis (e.g. Fourier and frequency-domain analysis, time-series, MATLAB/Simulink) to model and evaluate system behavior. I also work with networking and distributed systems (TCP/IP, MQTT, peer-to-peer, ns-3 simulation) to design and test connected and cyber-physical systems, and I have experience monitoring and troubleshooting production systems deployed on AWS.",
 ];
 
 export const aboutPillars = [
   { title: "Hardware", detail: "Sensors, relays, power systems, instrumentation" },
   { title: "Firmware", detail: "ESP32 control logic, MQTT communication, edge behavior" },
   { title: "Networks", detail: "TCP/IP, MQTT, peer-to-peer, ns-3 simulation, distributed systems" },
-  { title: "Cloud", detail: "AWS infrastructure, APIs, and data pipelines" },
+  { title: "Cloud & Systems", detail: "AWS infrastructure (EC2, S3, CloudFront, Route53), Linux servers, deployment, monitoring, logs, troubleshooting, uptime" },
   { title: "Software Development", detail: "React, React Native, Node.js, Express, REST APIs, MySQL, PostgreSQL, TimescaleDB" },
   { title: "Signal & Control", detail: "Signals and systems, frequency-domain analysis, MATLAB/Simulink, control systems" },
    
@@ -48,7 +48,7 @@ export const aboutPillars = [
 export const skills: SkillCategory[] = [
   {
     title: "Programming",
-    items: ["C", "C++", "JavaScript", "Python", "SQL", "MATLAB"],
+    items: ["C", "C++", "JavaScript", "PHP", "Python", "SQL", "MATLAB"],
   },
   {
     title: "Embedded & Hardware",
@@ -92,15 +92,24 @@ export const skills: SkillCategory[] = [
       "Linux",
     ],
   },
- 
+   {
+    title: "Cloud & Systems",
+    items: [
+      "AWS (EC2, S3, RDS, Route53, CloudFront, CloudWatch)",
+      "Linux",
+      "Ubuntu server maintenance",
+      "System monitoring and alarms",
+      "Log analysis and troubleshooting",
+      "Disk cleanup and resource tuning",
+      "Git",
+    ],
+  },
+
   {
     title: "Databases",
     items: ["MySQL", "PostgreSQL", "TimescaleDB"],
   },
-  {
-    title: "Cloud & Systems",
-    items: ["AWS (EC2, S3, RDS, Route53, CloudFront)", "Linux", "Git"],
-  },
+
 ];
 
 export const experience: ExperienceItem[] = [
@@ -114,6 +123,7 @@ export const experience: ExperienceItem[] = [
       "Implemented QR-code authentication using physical membership cards, enabling fast user identification and reducing manual login processes.",
       "Architected a multi-user supply-chain platform connecting shrimp producers and packers in Ecuador, supporting price comparison, transaction management, and logistics workflows.",
       "Built role-based dashboards and workflow systems enabling multiple stakeholders to manage transactions, logistics, and operational data across the platform.",
+      "Deployed and maintained backend services on AWS EC2, monitoring uptime and resolving issues related to storage, memory, and service availability."
     ],
   },
   {
@@ -123,7 +133,7 @@ export const experience: ExperienceItem[] = [
     achievements: [
       "Designed and deployed a full-stack e-commerce platform using React, Node.js, and MySQL to support online accounting services and customer account management.",
       "Implemented secure authentication and encrypted password storage, and integrated the Nuvei payment gateway to support secure online transactions.",
-      "Deployed and maintained cloud infrastructure on AWS (EC2, S3, Route53) to support application hosting, storage, and domain management.",
+      "Deployed and maintained cloud infrastructure on AWS (EC2, S3, Route53), supporting hosting, storage, domain management, and ongoing system reliability.",
     ],
   },
   {
@@ -133,6 +143,7 @@ export const experience: ExperienceItem[] = [
     achievements: [
       "Developed a web interface using React and Node.js to integrate with the company's vehicle maintenance database, enabling customers to access their service records online.",
       "Implemented data filtering and API-based data retrieval features, allowing users to query and view vehicle service history efficiently.",
+      "Deployed the system using AWS services and maintained the hosting environment to support stable customer access and application reliability.",
       "Provided technical consulting to management on software systems, database architecture, and technology infrastructure to support the company's digital platform.",
     ],
   },
@@ -144,6 +155,7 @@ export const experience: ExperienceItem[] = [
       "Developed a cross-platform e-commerce mobile application using React Native, Node.js, and MySQL to support product ordering and user account management.",
       "Designed and implemented backend REST APIs and an administrative dashboard for inventory management, order tracking, and user administration.",
       "Integrated the platform with AWS cloud infrastructure for application deployment, data storage, and system hosting.",
+      "Maintained cloud-hosted backend services and resolved issues affecting API communication, application performance, and data flow.",
       "Designed mobile interfaces and application prototypes in Figma to support development of the user-facing system.",
     ],
   },
@@ -155,7 +167,7 @@ export const experience: ExperienceItem[] = [
       "Designed and implemented a MySQL engineering database (~25 relational tables) to manage door system components and manufacturing data.",
       "Developed a JavaScript-based interface for engineering data management, reducing manual data entry and improving workflow efficiency.",
       "Implemented schema normalization, indexing, triggers, and stored procedures to ensure reliable and efficient data processing.",
-      "Deployed and maintained the system on AWS infrastructure (EC2, S3, IAM) and Linux servers, supporting application hosting and data storage.",
+      "Deployed and maintained the system on AWS infrastructure (EC2, S3, IAM) and Linux servers, supporting hosting, storage, and ongoing system reliability.",
     ],
   },
 ];
@@ -182,7 +194,7 @@ export const projects: ProjectItem[] = [
     shortDescription:
       "Role-based platform connecting producers and packers with centralized price comparison and logistics workflows. Utilizes AWS services for scalable, secure, and highly available infrastructure.",
     fullDescription:
-      "Architected a multi-stakeholder full-stack platform for shrimp trading operations in Ecuador, leveraging AWS Cloud services (including EC2, S3, CloudFront, IAM, RDS, and Aurora) for robust cloud infrastructure. The product improves coordination, decision speed, and transparency through role-aware dashboards and transaction workflows, backed by secure, scalable, and resilient AWS architecture.",
+      "Architected a multi-stakeholder full-stack platform for shrimp trading operations in Ecuador, leveraging AWS cloud services including EC2, S3, CloudFront, IAM, RDS, and Aurora. In addition to building the platform, I handled deployment and maintenance of the cloud environment, helping ensure reliable hosting, storage, and system availability.",
     techStack: [
       "React",
       "Node.js",
@@ -195,6 +207,7 @@ export const projects: ProjectItem[] = [
       "React dashboards provide role-specific views for producers, packers, and operators.",
       "Node.js/Express APIs enforce workflow rules and transaction consistency.",
       "AWS EC2 hosts backend services, while S3 stores static assets and user uploads.",
+      "AWS CloudWatch alarms and infrastructure monitoring support system reliability and help detect runtime issues early.",
       "Data persistence is managed by AWS RDS and Aurora, ensuring high performance and reliability for pricing, logistics, and account-level operations.",
     ],
     highlights: [
@@ -314,12 +327,13 @@ export const projects: ProjectItem[] = [
     shortDescription:
       "Full-stack loyalty platform with QR-based authentication and customer service history tracking.",
     fullDescription:
-      "Built a full-stack loyalty and rewards platform for vehicle service operations with 100+ registered users. The platform centralizes account data, reward balance management, and service history while improving access speed through QR card authentication.",
+      "Built a full-stack loyalty and rewards platform for vehicle service operations with 100+ registered users. The platform centralizes account data, reward balance management, and service history while improving access speed through QR card authentication. I also deployed and maintained the AWS-hosted environment used to run the application and support stable day-to-day usage.",
     techStack: ["React", "Node.js", "MySQL", "AWS (EC2, S3, CloudFront, RDS, Aurora)", "REST APIs", "QR authentication"],
     categories: ["Full Stack Web Application"],
     architecture: [
       "Frontend UI handles customer account and rewards operations.",
       "REST API services manage authentication, points, and service history records.",
+      "AWS-hosted services support application delivery, storage, and production reliability.",
       "MySQL schema models loyalty accounts, transactions, and historical maintenance events.",
     ],
     highlights: [
@@ -395,13 +409,13 @@ export const projects: ProjectItem[] = [
     shortDescription:
       "Web interface integrating a vehicle maintenance database with filtering and online service history for customers (FJ CIM).",
     fullDescription:
-      "Developed a web interface integrating the company's vehicle maintenance database using React and Node.js. Implemented filtering and data access features, allowing customers to view their service history online.",
+    "Developed a web interface integrating the company's vehicle maintenance database using React and Node.js. Implemented filtering and data access features, allowing customers to view their service history online. After development, I deployed the system on AWS using services such as EC2, S3, Route53, and CloudFront, and set up monitoring to support stable production use.",
     techStack: ["React", "Node.js", "Database integration", "AWS (EC2, S3, CloudFront, RDS, Aurora)"],
     categories: ["Full Stack Web Application"],
     architecture: [
       "React frontend provides filtering and data access for maintenance records.",
       "Node.js backend integrates with the existing vehicle maintenance database.",
-      "Customers can view their service history online through the web interface.",
+      "AWS infrastructure handles hosting, static asset delivery, and production deployment for customer-facing access."
     ],
     highlights: [
       "Web interface for vehicle maintenance database",
